@@ -28,6 +28,22 @@ git push
 ´´
 ## Parte 1: DNS
 ## Parte 2: Docker
+### Como criar uma imagem personalizado de um container Docker?
+1. Cria um arquivo chamado Dockerfile contendo as instruções de personalização da imagem.
+2. Executa o camando para criar a imagem, exemplo:
+´´
+// docker build -t <tagname> base_dir 
+$ docker build -t ubuntu-bind .
+´´
+### Criar e executar um container com base em uma imagem existente?
+
+// docker run [parametros] nome_imagem
+$ docker run -d -p 53:53/udp -p 53:53/tcp --name bind9 ubuntu-bind
+´´
+
+
 ## Parte 3: Prática de DNS + Docker
+É importante ler a documentação oficial do bind9, assim como também ler os comentários presentes dentro dos arquivos de configuração, pois eles trazem informações relevantes para a prática da configuração e manutenção do serviço de DNS.
+
 
 
