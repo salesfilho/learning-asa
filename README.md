@@ -1,51 +1,47 @@
-# learning-asa
-Esta disciplina tem como principal objetivo implementar os serviços básicos de rede usando sistemas baseados em Linux, incluindo servidor de DNS, servidor Web, Proxy e correio eletrônico.
+# Configurando o DNS (Bind9)
+Esta aula é dedicada aos conceitos básicos do serviço de resolução de nomes e abrange temas como:
 
-Ao término do curso, espera-se que os alunos sejam capazes de:
-1. Compreender o funcionamento de serviços em Linux funcionando em Containers Docker
-2. Realiar a configuração de servidores em containers
-3. Implemetar um provedor de serviços de conteúdo da internet
+- Conceitos de DNS
+- Documentação técnica
+- Configuração de zonas DNS
+- Base de dados de zonas de DNS
 
-# Estratégias e Conteúdo programático
-- Conceitos básicos dos serviços
-- Práticas de implementação em diversos casos de uso
-- Apredizado baseado em problemas
-- Aprendizado por projetos
+## DNS
+O sistema de nomenclatura DNS é organizado como uma estrutura de árvore composta de vários níveis e, portanto, cria naturalmente um sistema distribuído. Cada nó na árvore recebe um rótulo que define seu Domínio (sua área ou zona) de Autoridade. O nó mais alto na árvore é o Domínio Raiz; ele delega para Domínios no próximo nível que são genericamente conhecidos como Domínios de Nível Superior (TLDs). Eles, por sua vez, delegam para Domínios de Segundo Nível (SLDs), e assim por diante. Os Domínios de Nível Superior (TLDs) incluem um grupo especial de TLDs chamado Domínios de Nível Superior de Código de País (ccTLDs), no qual cada país recebe um código de país exclusivo de dois caracteres da ISO 3166 como seu domínio.
 
-# Conteúdos
+## Documentação técnica
+O [BIND 9 Administrator Reference Manual](https://bind9.readthedocs.io/en/v9.18.31/index.html) compila um conjunto abrangente e didático de informações técnicas sobre o serviço de resolução de nomes, casos de uso e exemplo de configuração. A leitura desse manual é altamente recomendada para administradores de serviço de DNS.
 
-## Parte 0: GIT
+## Configuração de zonas
+No bind9, a configuração de zonas é realizada por meio dos arquivos de parametrização orquestrado pelo arquivo **named.conf** que vem pré-configurado na instalação padrão. Assim, na maioria dos casos, não é necessário alterar diretamente o arquivo **named.conf**. Em vez disso, modifica-se o arquivo **named.conf.local**
 
-- Criação de repositório
-- Clonagem de repositório
-- Principais comandos de operação do git
+### Exemplo de definição de zona no aquivo named.conf.local
 
 ~~~
-git status
+zone "asa.br"{
+    type master;
+    file "/etc/bind/db.asa.br";
+    allow-transfer {
+        127.0.0.1;
+    };
+};
 ~~~
-git add .
-git commit -m "Mensagem do commite" 
-git push
-ˋˋˋ
+### Exemplo de definição de banco de dados de zona de DNS
 
-## Parte 1: DNS
-## Parte 2: Docker
-### Como criar uma imagem personalizado de um container Docker?
-1. Cria um arquivo chamado Dockerfile contendo as instruções de personalização da imagem.
-2. Executa o camando para criar a imagem, exemplo:
-´´
-// docker build -t <tagname> base_dir 
-$ docker build -t ubuntu-bind .
-´´
-### Criar e executar um container com base em uma imagem existente?
-
-// docker run [parametros] nome_imagem
-$ docker run -d -p 53:53/udp -p 53:53/tcp --name bind9 ubuntu-bind
-´´
-
-
-## Parte 3: Prática de DNS + Docker
-É importante ler a documentação oficial do bind9, assim como também ler os comentários presentes dentro dos arquivos de configuração, pois eles trazem informações relevantes para a prática da configuração e manutenção do serviço de DNS.
-
-
-
+~~~
+;
+; BIND data file for asa.br zone
+;
+$TTL	604800
+@	IN	SOA	ns.asa.br. root.asa.br. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@		IN	NS	ns.
+@		IN	A	127.0.0.1
+www		IN	A	10.24.6.54
+portal	IN	CNAME	www
+~~~
