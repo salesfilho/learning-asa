@@ -19,13 +19,15 @@ Ao término do curso, espera-se que os alunos sejam capazes de:
 - Criação de repositório
 - Clonagem de repositório
 - Principais comandos de operação do git
-´´
+
+~~~
 git status
+~~~
 git add .
 git commit -m "Mensagem do commite" 
 git push
+ˋˋˋ
 
-´´
 ## Parte 1: DNS
 ## Parte 2: Docker
 ### Como criar uma imagem personalizado de um container Docker?
