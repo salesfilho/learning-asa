@@ -19,7 +19,7 @@ Ao término deste curso, espera-se que os alunos sejam capazes de:
 
 # Conteúdos
 
-1. Usando o git
+1. [Usando o git](https://github.com/salesfilho/learning-asa/tree/0-GIT)
 2. Conceitos de DNS
 3. Usando o Docker
 4. Configurando o Bind9 usando o Docker
