@@ -20,8 +20,8 @@ Ao término deste curso, espera-se que os alunos sejam capazes de:
 # Conteúdos
 
 1. [Usando o git](https://github.com/salesfilho/learning-asa/tree/0-GIT)
-2. Conceitos de DNS
-3. Usando o Docker
-4. Configurando o Bind9 usando o Docker
+2. [Configurando o DNS (Bind9)](https://github.com/salesfilho/learning-asa/blob/1-DNS/README.md)
+3. [Usando o Docker](https://github.com/salesfilho/learning-asa/blob/2-Docker/README.md)
+4. [Configurando o Bind9 usando o Docker](https://github.com/salesfilho/learning-asa/blob/3-Pratica-DNS-Docker/README.md)
 
 
