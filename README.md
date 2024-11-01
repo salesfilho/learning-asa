@@ -12,6 +12,23 @@ O sistema de nomenclatura DNS é organizado como uma estrutura de árvore compos
 ## Documentação técnica
 O [BIND 9 Administrator Reference Manual](https://bind9.readthedocs.io/en/v9.18.31/index.html) compila um conjunto abrangente e didático de informações técnicas sobre o serviço de resolução de nomes, casos de uso e exemplo de configuração. A leitura desse manual é altamente recomendada para administradores de serviço de DNS.
 
+## Instalação e configuração do Bind9 no Ubuntu Linux
+O bind9 pode ser instalado e configurado no sistema Ubuntu Linux. Um passo-a-passo de pode ser obtido no site oficial de documentação do Ubuntu em [https://ubuntu.com/server/docs/domain-name-service-dns](https://ubuntu.com/server/docs/domain-name-service-dns). Os pricipais comandos para instalação são:
+
+### Instalação do bind9 e ferramentas auxiliares
+
+~~~
+apt install bind9 dnsutils -y
+~~~
+
+### Arquivos principais de configuração
+
+~~~
+/etc/bind/named.conf.options (Opções Globaais de DNS)
+/etc/bind/named.conf.local (Configure suas zonas aqui)
+/etc/bind/named.conf.default-zones (Zonas padrão como localhost, e root servers)
+~~~
+
 ## Configuração de zonas
 No bind9, a configuração de zonas é realizada por meio dos arquivos de parametrização orquestrado pelo arquivo **named.conf** que vem pré-configurado na instalação padrão. Assim, na maioria dos casos, não é necessário alterar diretamente o arquivo **named.conf**. Em vez disso, modifica-se o arquivo **named.conf.local**
 
