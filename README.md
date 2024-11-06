@@ -5,5 +5,32 @@ A documentação do Docker é ampla, gratuita e intuitiva. Acesse o site [https:
 
 # Conteúdos
 
+Listando as imagens existentes no repositório local usando a CLI
 
+~~~
+docker image ls
+~~~
 
+Construindo imagens com base em um arquivo *Dockerfile* usando a CLI
+
+Exemplo:
+~~~
+docker build -t <nome_tag> [-f] [Dorckerfile] [caminho base]
+~~~
+
+Este exemplo constroe uma imagem baseada no arquivo Dockerfile que precisa estar no diretório local (Representado pelo ponto ".")
+~~~
+docker build -t ubuntu-bind .
+~~~
+
+Criando um container a partir da imagem existente no respositório local de imagens docker
+
+~~~
+docker run -p 53:53/udp -p 53:53/tcp --name bind9 ubuntu-bind
+~~~
+
+Testando o funcionamento do servidor Bind na máquina hospedeira (local)
+
+~~~
+nslookup www.asa.br 127.0.0.1
+~~~
