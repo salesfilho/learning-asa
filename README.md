@@ -6,6 +6,8 @@ Esta aula é dedicada aos conceitos básicos do serviço de resolução de nomes
 - Configuração de zonas DNS
 - Base de dados de zonas de DNS
 
+Os arquivos presentes nesta branch servem como modelo para implementação do serviço de DNS usando o Bind9
+
 ## DNS
 O sistema de nomenclatura DNS é organizado como uma estrutura de árvore composta de vários níveis e, portanto, cria naturalmente um sistema distribuído. Cada nó na árvore recebe um rótulo que define seu Domínio (sua área ou zona) de Autoridade. O nó mais alto na árvore é o Domínio Raiz; ele delega para Domínios no próximo nível que são genericamente conhecidos como Domínios de Nível Superior (TLDs). Eles, por sua vez, delegam para Domínios de Segundo Nível (SLDs), e assim por diante. Os Domínios de Nível Superior (TLDs) incluem um grupo especial de TLDs chamado Domínios de Nível Superior de Código de País (ccTLDs), no qual cada país recebe um código de país exclusivo de dois caracteres da ISO 3166 como seu domínio.
 
