@@ -1,5 +1,5 @@
 # learning-asa
-Este curso tem como principal objetivo implementar serviços básicos de infraestrutura de rede usando sistemas baseados em Linux. Será abordada a configuração de servidores de DNS usando Bind9, servidores Web e Proxy reverso usando NGINX e correio eletrônico usando Posfix. 
+Este repositório serve de apoio ao curso de Administração de Sistemas Abertos (ASA) e tem como principal objetivo implementar serviços básicos de infraestrutura de rede usando sistemas baseados em Linux. Será abordada a configuração de servidores de DNS usando Bind9, servidores Web e Proxy reverso usando NGINX e correio eletrônico usando Posfix. 
 
 Ao término deste curso, espera-se que os alunos sejam capazes de:
 
