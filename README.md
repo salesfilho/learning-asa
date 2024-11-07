@@ -3,10 +3,9 @@ O Docker é uma plataforma aberta para desenvolver, enviar e executar aplicativo
 
 A documentação do Docker é ampla, gratuita e intuitiva. Acesse o site [https://docs.docker.com/get-started/docker-overview/](https://docs.docker.com/get-started/docker-overview/) e saiba mais sobre o Docker.
 
-## Criação do serviço de DNS usando a imagem Oficial do Nginx
+## Criação do serviço HTTP usando a imagem Oficial do Nginx
 
 Inicialmente, é recomendado consultar a documentação oficial das imagens utilizadas diretamente em[ http://hub.docker.com.](http://hub.docker.com.). Faça isso com a imagem do Nginx para aprofundar o conhecimento. Feito isso, vamos criar o Dockerfile (veja o exemplo) e executar os comandos de criar a imagem e também o container.
-
 
 Criando a imagem:
 ~~~
