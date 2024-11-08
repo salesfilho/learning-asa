@@ -1,4 +1,4 @@
-# Apontando o serviço os registeros de DNS para o Servidor Web
+# Apontando o serviço os registros de DNS para o Servidor Web
 
 Agora que temos o servidor de DNS e o servidor Web configurados, é hora de finalizar esse percurso vinculando esses dois serviços. As tarefas necessárias para realizar essa vinculação são:
 
