@@ -13,7 +13,7 @@ Agora que temos o servidor de DNS e o servidor Web configurados, é hora de fina
 ## Praticar é preciso
 
 Essa deve ser a atividade que deve ser realizada antes de dar andamento no restante do curso. Nessa atividade, deve ser criada uma estrutura de arquivos e diretórios em um mesmo projeto (repositório) contendo a seguinte estrutura:
-
+~~~
 - atividade-asa-01
   - dns
      - Dockerfile 
@@ -24,7 +24,7 @@ Essa deve ser a atividade que deve ser realizada antes de dar andamento no resta
     - index.html
 - service.sh
 - README.md
-
+~~~
 O arquivo **service.sh** é um script em bash que automatiza as operações de início (start) e parada (stop) dos serviços. 
 
 **Como usar:**
