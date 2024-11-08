@@ -12,4 +12,30 @@ Agora que temos o servidor de DNS e o servidor Web configurados, é hora de fina
    
 ## Praticar é preciso
 
-Essa deve ser a atividade que deve ser realizada antes de dar andamento no restante do curso.
+Essa deve ser a atividade que deve ser realizada antes de dar andamento no restante do curso. Nessa atividade, deve ser criada uma estrutura de arquivos e diretórios em um mesmo projeto (repositório) contendo a seguinte estrutura:
+
+- atividade-asa-01
+  - dns
+     - Dockerfile 
+     - db.asa.br
+     - named.conf.local
+  - web
+    - Dockerfile
+    - index.html
+- service.sh
+- README.md
+
+O arquivo **service.sh** é um script em bash que automatiza as operações de início (start) e parada (stop) dos serviços. 
+
+**Como usar:**
+~~~
+./service.sh <serviço> <ação>
+~~~
+
+**Exemplo para iniciar o serviço de DNS**
+~~~
+./service.sh dns start
+~~~
+
+Todos os comandos para criar/destruir as imagens, containers etc devem ser encapsulados e automatizados no script **service.sh**
+
