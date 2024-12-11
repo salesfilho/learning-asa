@@ -8,10 +8,18 @@ services:
     ports:
       - "53:53/udp"
 
+  proxy:
+    build: 
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: nginx-proxy
+    ports:
+      - "80:80/tcp"
+
   web:
     build: 
       context: ./web
       dockerfile: Dockerfile
     container_name: web
     ports:
-      - "80:80/tcp"
+      - "81:80/tcp"
