@@ -14,3 +14,4 @@ $TTL	604800
 www		IN	A	10.25.2.111
 portal	IN	CNAME	www
 sales	IN	CNAME	www
+sofia	IN	CNAME	www

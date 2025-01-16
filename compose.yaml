@@ -30,9 +30,9 @@ services:
 
   asa-server2:
     build: 
-      context: ./asa-server
+      context: ./asa-server02
       dockerfile: Dockerfile
-    container_name: asa-server2
+    container_name: asa-server02
     networks:
       - asa-network
 
