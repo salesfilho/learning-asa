@@ -1,0 +1,42 @@
+services:
+  dns:
+    build: 
+      context: ./dns
+      dockerfile: Dockerfile
+    container_name: dns
+    ports:
+      - "53:53/udp"
+
+  web01:
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    image: web-sales
+    container_name: web01
+
+  web01a:
+    image: web-sales
+    container_name: web01a
+
+  web02:
+    build: 
+      context: ./web02
+      dockerfile: Dockerfile
+    container_name: web02
+
+  web03:
+    build: 
+      context: ./web03
+      dockerfile: Dockerfile
+    container_name: web03
+
+  proxy:
+    build: 
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: proxy
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - ./proxy/certs:/etc/nginx/ssl
