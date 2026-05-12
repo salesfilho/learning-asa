@@ -1,0 +1,40 @@
+services:
+  dns:
+    image: internetsystemsconsortium/bind9:9.18
+    container_name: dns
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - ./bind:/etc/bind
+  site1:
+    image: nginx:latest
+    volumes:
+      - ./web/site1:/usr/share/nginx/html
+  site2:
+    image: nginx:latest
+    volumes:
+      - ./web/site2:/usr/share/nginx/html
+  site3:
+    image: nginx:latest
+    volumes:
+      - ./web/site3:/usr/share/nginx/html
+  proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy:/etc/nginx/conf.d
+  email:
+    build:
+      context: ./email
+      dockerfile: Dockerfile
+    image: email
+    container_name: email
+    dns:
+    - 10.27.1.191  # ou o IP do container dns
+    ports:
+      - "25:25/tcp"
+      - "587:587/tcp"
+      - "110:110/tcp"
+      - "143:143/tcp"   

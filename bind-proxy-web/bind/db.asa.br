@@ -1,0 +1,24 @@
+;
+; BIND data file for asa.br zone
+;
+$TTL	604800
+@	IN	SOA	ns.asa.br. root.asa.br. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@		IN	NS	ns.
+@		IN	A	10.27.1.191
+@   IN  MX  10 mail.asa.br.
+@   IN  MX  20 mail2.asa.br.
+mail	IN	A	10.27.1.191
+
+www		IN	A	10.27.1.191
+mail2	IN	CNAME	www
+portal	IN	CNAME	www
+webmail	IN	CNAME	www
+sales	IN CNAME www
+teo	IN CNAME www
+alfredo	IN CNAME www
